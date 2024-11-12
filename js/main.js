@@ -79,3 +79,35 @@ sr.reveal(".contact__text", { delay: 800 });
 // footer
 sr.reveal(".footer__item", { distance: "100px", interval: 100 });
 sr.reveal(".footer__copyright");
+
+// nav
+document.querySelectorAll("nav a").forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    const href = this.getAttribute("href");
+
+    if (href === "#") {
+      // For Home link, scroll to the top smoothly
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      // For other links, scroll to the target element
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        e.preventDefault();
+        const elementPosition =
+          targetElement.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - 100; // Adjust for header height
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  });
+});
