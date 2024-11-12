@@ -46,6 +46,10 @@ h6 {
   @apply h-[350px] p-6;
 }
 
+.bg-hero {
+  background-image: url(/assets/hero/bg.jpg);
+}
+
 /* swiper pagination */
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets
