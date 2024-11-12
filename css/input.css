@@ -47,7 +47,7 @@ h6 {
 }
 
 .bg-hero {
-  background-image: url(/assets/hero/bg.jpg);
+  background-image: url("/assets/hero/bg.jpg");
 }
 
 /* swiper pagination */
